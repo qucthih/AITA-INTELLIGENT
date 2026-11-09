@@ -103,7 +103,8 @@ describe('ExecutionService Unit Tests', () => {
 
     const res = await service.executeSubmission({
       submissionId: 'sub_compile_err',
-      zipFilePath: sampleZipPath
+      zipFilePath: sampleZipPath,
+      testCases: [{ id: 'tc1', inputData: '', expectedOutput: '' }]
     });
 
     expect(res.outcome).toBe('COMPILATION_ERROR');
